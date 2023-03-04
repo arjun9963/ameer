@@ -1,0 +1,16 @@
+pipeline{
+     
+        stage{
+        stage('vcs'){
+            steps{
+               git url: 'https://github.com/arjun9963/game-of-life.git'
+                   branch: 'declarative'
+            }
+        }
+        stage('package'){
+            steps{
+                sh 'mvn package'
+            }
+        }
+    }
+}   
