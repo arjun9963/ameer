@@ -1,0 +1,16 @@
+pipeline {
+    agent {lable 'AAA'}
+    stageS {
+        stage('vcs'){
+            steps {
+                git url:'https://github.com/arjun9963/spring-petclinic.git',
+                    branch:'main'
+            }
+        }
+        stage('package'){
+            steps {
+                sh 'mvn package'
+            }
+        }
+    }
+}
